@@ -8,12 +8,15 @@ import ThemesPage from "./pages/ThemesPage";
 import AuthorsPage from "./pages/AuthorsPage";
 import AuthorPage from "./pages/AuthorPage";
 import FavoritesPage from "./pages/FavoritesPage";
+import ProgressPage from "./pages/ProgressPage";
 import { useFavorites } from "./hooks/useFavorites";
+import { useExplored } from "./hooks/useExplored";
 import { quoteById } from "./data/quotes";
 import { Quote } from "./data/types";
 
 export default function App() {
-  const { favorites, toggle, isFavorite, count } = useFavorites();
+  const { favorites, toggle, isFavorite, count: favCount } = useFavorites();
+  const { explored, markExplored, isExplored, count: exploredCount } = useExplored();
   const [activeQuote, setActiveQuote] = useState<Quote | null>(null);
   const [searchParams] = useSearchParams();
 
@@ -22,14 +25,17 @@ export default function App() {
     const qid = searchParams.get("q");
     if (qid) {
       const found = quoteById(qid);
-      if (found) setActiveQuote(found);
+      if (found) { setActiveQuote(found); markExplored(found.id); }
     }
-  }, [searchParams]);
+  }, [searchParams]); // eslint-disable-line react-hooks/exhaustive-deps
 
-  const openDeepDive = (q: Quote) => setActiveQuote(q);
+  const openDeepDive = (q: Quote) => {
+    setActiveQuote(q);
+    markExplored(q.id);
+  };
   const openDeepDiveById = (id: string) => {
     const found = quoteById(id);
-    if (found) setActiveQuote(found);
+    if (found) { setActiveQuote(found); markExplored(found.id); }
   };
   const closeDeepDive = () => setActiveQuote(null);
 
@@ -41,18 +47,16 @@ export default function App() {
 
   return (
     <>
-      <Layout onDeepDive={openDeepDiveById} favCount={count}>
+      <Layout onDeepDive={openDeepDiveById} favCount={favCount} exploredCount={exploredCount}>
         <Routes>
-          <Route path="/" element={<HomePage {...sharedProps} />} />
+          <Route path="/" element={<HomePage {...sharedProps} exploredCount={exploredCount} />} />
           <Route path="/eras" element={<ErasPage {...sharedProps} />} />
           <Route path="/themes" element={<ThemesPage {...sharedProps} />} />
           <Route path="/authors" element={<AuthorsPage />} />
           <Route path="/author/:slug" element={<AuthorPage {...sharedProps} />} />
-          <Route
-            path="/favorites"
-            element={<FavoritesPage favorites={favorites} {...sharedProps} />}
-          />
-          <Route path="*" element={<HomePage {...sharedProps} />} />
+          <Route path="/favorites" element={<FavoritesPage favorites={favorites} {...sharedProps} />} />
+          <Route path="/progress" element={<ProgressPage explored={explored} onDeepDive={openDeepDive} />} />
+          <Route path="*" element={<HomePage {...sharedProps} exploredCount={exploredCount} />} />
         </Routes>
       </Layout>
 
@@ -63,6 +67,7 @@ export default function App() {
           onOpen={openDeepDive}
           isFavorite={isFavorite(activeQuote.id)}
           onToggleFavorite={toggle}
+          isExplored={isExplored(activeQuote.id)}
         />
       )}
     </>

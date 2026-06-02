@@ -11,6 +11,7 @@ type Props = {
   onOpen: (q: Quote) => void;
   isFavorite: boolean;
   onToggleFavorite: (id: string) => void;
+  isExplored?: boolean;
 };
 
 export default function DeepDiveModal({
@@ -18,6 +19,7 @@ export default function DeepDiveModal({
   onClose,
   onOpen,
   isFavorite,
+  isExplored,
   onToggleFavorite,
 }: Props) {
   const overlayRef = useRef<HTMLDivElement>(null);
@@ -76,9 +78,14 @@ export default function DeepDiveModal({
             backdropFilter: "blur(8px)",
           }}
         >
-          <div className="flex items-center gap-2 text-sm" style={{ color: era?.color }}>
+          <div className="flex items-center gap-3 text-sm" style={{ color: era?.color }}>
             <span className="text-lg">{era?.icon}</span>
             <span className="font-semibold tracking-wide uppercase text-xs">Deep Dive</span>
+            {isExplored && (
+              <span className="flex items-center gap-1 px-2 py-0.5 rounded-full text-xs font-bold bg-emerald-900/50 text-emerald-400 border border-emerald-700/40">
+                ✓ Explored
+              </span>
+            )}
           </div>
           <button
             onClick={onClose}

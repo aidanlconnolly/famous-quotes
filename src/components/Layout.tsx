@@ -6,9 +6,12 @@ type Props = {
   children: ReactNode;
   onDeepDive: (quoteId: string) => void;
   favCount: number;
+  exploredCount: number;
 };
 
-export default function Layout({ children, onDeepDive, favCount }: Props) {
+export default function Layout({ children, onDeepDive, favCount, exploredCount }: Props) {
+  const totalQuotes = ALL_QUOTES.length;
+  const progressPct = Math.round((exploredCount / totalQuotes) * 100);
   const [searchOpen, setSearchOpen] = useState(false);
   const [searchQuery, setSearchQuery] = useState("");
 
@@ -57,6 +60,17 @@ export default function Layout({ children, onDeepDive, favCount }: Props) {
             </NavLink>
             <NavLink to="/favorites" className={navLinkClass}>
               ♥{favCount > 0 && ` ${favCount}`}
+            </NavLink>
+            <NavLink to="/progress" className={navLinkClass}>
+              <span className="flex items-center gap-1.5">
+                <span className="text-xs">⛰️</span>
+                <span>Progress</span>
+                {exploredCount > 0 && (
+                  <span className="text-xs px-1.5 py-0.5 rounded-full bg-emerald-900/60 text-emerald-400 font-bold">
+                    {progressPct}%
+                  </span>
+                )}
+              </span>
             </NavLink>
           </nav>
 
