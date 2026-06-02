@@ -32,9 +32,11 @@ export default function Layout({ children, onDeepDive, favCount, exploredCount }
       : [];
 
   return (
-    <div className="min-h-screen flex flex-col">
-      {/* Nav */}
-      <header className="sticky top-0 z-40 px-4 py-3 border-b border-slate-800/70 bg-[#0f172a]/90 backdrop-blur-md">
+    <div className="min-h-screen flex flex-col" style={{ background: "transparent" }}>
+      {/* Nav — transparent when at top so mountain shows through */}
+      <header className="sticky top-0 z-40 px-4 py-3 border-b border-white/5 transition-colors duration-300"
+        style={{ background: "rgba(15,23,42,0.65)", backdropFilter: "blur(16px)", WebkitBackdropFilter: "blur(16px)" }}
+      >
         <div className="max-w-6xl mx-auto flex items-center gap-2 flex-wrap">
           {/* Logo */}
           <NavLink to="/" className="flex items-center gap-2 mr-4">
@@ -123,8 +125,8 @@ export default function Layout({ children, onDeepDive, favCount, exploredCount }
         </div>
       </header>
 
-      {/* Main */}
-      <main className="flex-1 px-4 py-8 max-w-6xl mx-auto w-full">{children}</main>
+      {/* Main — pages control their own width/padding */}
+      <main className="flex-1 w-full">{children}</main>
 
       {/* Footer */}
       <footer className="border-t border-slate-800 py-8 text-center text-slate-600 text-sm">

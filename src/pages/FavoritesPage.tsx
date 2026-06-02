@@ -14,7 +14,7 @@ export default function FavoritesPage({ favorites, isFavorite, onToggleFavorite,
   const favQuotes = ALL_QUOTES.filter((q) => favorites.has(q.id));
 
   return (
-    <div className="max-w-5xl mx-auto space-y-8">
+    <div className="px-4 py-8 max-w-6xl mx-auto space-y-8">
       <div>
         <h1 className="text-3xl font-bold text-white">Your Favorites</h1>
         <p className="text-slate-400 mt-2">

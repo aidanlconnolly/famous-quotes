@@ -15,7 +15,7 @@ export default function ProgressPage({ explored, onDeepDive }: Props) {
   const pct = Math.round((done / total) * 100);
 
   return (
-    <div className="max-w-5xl mx-auto space-y-10">
+    <div className="px-4 py-8 max-w-6xl mx-auto space-y-10">
       {/* Header */}
       <div>
         <h1 className="text-3xl font-bold text-white">Your Progress</h1>

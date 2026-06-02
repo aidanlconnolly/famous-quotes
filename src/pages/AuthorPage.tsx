@@ -33,7 +33,7 @@ export default function AuthorPage({ isFavorite, onToggleFavorite, onDeepDive }:
   }
 
   return (
-    <div className="max-w-5xl mx-auto space-y-8">
+    <div className="px-4 py-8 max-w-6xl mx-auto space-y-8">
       {/* Back */}
       <button
         onClick={() => navigate("/authors")}
