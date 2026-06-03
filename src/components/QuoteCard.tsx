@@ -42,9 +42,9 @@ export default function QuoteCard({
         <div className="flex items-center gap-2 min-w-0">
           {quote.emoji && <span className="text-xl flex-shrink-0">{quote.emoji}</span>}
           <div className="min-w-0">
-            <p className="font-semibold text-slate-200 text-sm truncate">{quote.author}</p>
+            <p className="font-semibold text-[#1a1a1a] text-sm truncate">{quote.author}</p>
             {!compact && quote.authorTitle && (
-              <p className="text-slate-500 text-xs truncate">{quote.authorTitle}</p>
+              <p className="text-[#6b6358] text-xs truncate">{quote.authorTitle}</p>
             )}
           </div>
         </div>
@@ -80,7 +80,7 @@ export default function QuoteCard({
 
       {/* Source */}
       {!compact && (quote.source || quote.year) && (
-        <p className="text-slate-500 text-xs italic mb-3">
+        <p className="text-[#6b6358] text-xs italic mb-3">
           {[quote.source, quote.year].filter(Boolean).join(" · ")}
         </p>
       )}
@@ -101,8 +101,8 @@ export default function QuoteCard({
       )}
 
       {/* Bottom actions + double-click hint */}
-      <div className="flex items-center justify-between gap-2 mt-auto pt-2 border-t border-slate-700/40">
-        <p className="text-slate-600 text-xs select-none opacity-0 group-hover:opacity-100 transition-opacity">
+      <div className="flex items-center justify-between gap-2 mt-auto pt-2 border-t border-[#d6cfc1]/40">
+        <p className="text-[#6b6358] text-xs select-none opacity-0 group-hover:opacity-100 transition-opacity">
           Double-click to explore ↗
         </p>
         <div className="flex gap-1.5">
@@ -111,7 +111,7 @@ export default function QuoteCard({
               e.stopPropagation();
               copyQuote(quote);
             }}
-            className="px-2.5 py-1 rounded text-xs text-slate-400 hover:text-slate-200 hover:bg-slate-700 transition-colors"
+            className="px-2.5 py-1 rounded text-xs text-[#6b6358] hover:text-[#1a1a1a] hover:bg-[#d6cfc1] transition-colors"
             title="Copy quote"
           >
             ⧉

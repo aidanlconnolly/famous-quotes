@@ -3,7 +3,6 @@ import { Quote } from "../data/types";
 import MountainBackground from "../components/MountainBackground";
 import BrowseCards from "../components/BrowseCards";
 import QuoteOfDay from "../components/QuoteOfDay";
-import RandomHero from "../components/RandomHero";
 import { ALL_QUOTES } from "../data/quotes";
 
 type Props = {
@@ -82,7 +81,7 @@ export default function HomePage({ onDeepDive, exploredCount }: Props) {
           <p
             className="max-w-xl mx-auto text-lg leading-relaxed mb-10"
             style={{
-              color: "rgba(200,220,238,0.85)",
+              color: "rgba(232,218,198,0.88)",
               textShadow: "0 1px 8px rgba(0,0,0,0.6)",
             }}
           >
@@ -125,15 +124,15 @@ export default function HomePage({ onDeepDive, exploredCount }: Props) {
           className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2"
           style={{ opacity: Math.max(0, 1 - scrollY / 150) }}
         >
-          <span className="text-xs font-medium tracking-widest uppercase" style={{ color: "rgba(200,218,235,0.6)" }}>
+          <span className="text-xs font-medium tracking-widest uppercase" style={{ color: "rgba(220,198,170,0.65)" }}>
             Scroll
           </span>
-          <div className="w-px h-10 relative overflow-hidden" style={{ background: "rgba(200,218,235,0.25)" }}>
+          <div className="w-px h-10 relative overflow-hidden" style={{ background: "rgba(220,198,170,0.25)" }}>
             <div
               className="absolute top-0 left-0 w-full"
               style={{
                 height: "40%",
-                background: "rgba(200,218,235,0.8)",
+                background: "rgba(220,198,170,0.8)",
                 animation: "scrollDot 1.6s ease-in-out infinite",
               }}
             />
@@ -146,18 +145,18 @@ export default function HomePage({ onDeepDive, exploredCount }: Props) {
         id="explore"
         className="relative z-20"
         style={{
-          background: "#0f172a",
+          background: "#f4f1ea",
           borderRadius: "2rem 2rem 0 0",
           marginTop: "-6rem",
           paddingTop: "5rem",
           paddingBottom: "6rem",
-          boxShadow: "0 -20px 60px rgba(0,0,0,0.6)",
+          boxShadow: "0 -20px 60px rgba(0,0,0,0.35)",
         }}
       >
         {/* Subtle top highlight line */}
         <div
           className="absolute top-0 left-1/2 -translate-x-1/2 rounded-full"
-          style={{ width: "40%", height: "1px", background: "rgba(148,163,184,0.25)" }}
+          style={{ width: "40%", height: "1px", background: "#d6cfc1" }}
         />
 
         <div className="px-4 max-w-6xl mx-auto space-y-12">
@@ -167,13 +166,10 @@ export default function HomePage({ onDeepDive, exploredCount }: Props) {
             <BrowseCards exploredCount={exploredCount} />
           </div>
 
-          {/* Daily + Random */}
+          {/* Daily Quote */}
           <div>
             <SectionLabel>Today's Wisdom</SectionLabel>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
-              <QuoteOfDay onDeepDive={onDeepDive} />
-              <RandomHero onDeepDive={onDeepDive} />
-            </div>
+            <QuoteOfDay onDeepDive={onDeepDive} />
           </div>
         </div>
       </section>
@@ -194,9 +190,9 @@ export default function HomePage({ onDeepDive, exploredCount }: Props) {
 function SectionLabel({ children }: { children: React.ReactNode }) {
   return (
     <div className="flex items-center gap-4 mb-6">
-      <div className="h-px flex-1 bg-slate-800" />
-      <span className="text-xs font-bold uppercase tracking-widest text-slate-500">{children}</span>
-      <div className="h-px flex-1 bg-slate-800" />
+      <div className="h-px flex-1" style={{ background: "#d6cfc1" }} />
+      <span className="text-xs font-bold uppercase tracking-widest" style={{ color: "#6b6358", letterSpacing: "0.18em" }}>{children}</span>
+      <div className="h-px flex-1" style={{ background: "#d6cfc1" }} />
     </div>
   );
 }

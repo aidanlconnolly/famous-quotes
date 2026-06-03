@@ -19,7 +19,7 @@ export default function ProgressPage({ explored, onDeepDive }: Props) {
       {/* Header */}
       <div>
         <h1 className="text-3xl font-bold text-white">Your Progress</h1>
-        <p className="text-slate-400 mt-2">
+        <p className="text-[#6b6358] mt-2">
           Track which quotes you've deep-dived. Double-click any quote to explore it — it'll count toward your progress.
         </p>
       </div>
@@ -35,7 +35,7 @@ export default function ProgressPage({ explored, onDeepDive }: Props) {
               ? "Complete — every quote explored! 🏆"
               : `${total - done} quote${total - done !== 1 ? "s" : ""} left to explore`}
           </h2>
-          <p className="text-slate-400 text-sm">
+          <p className="text-[#6b6358] text-sm">
             {done === 0
               ? "Double-click any quote anywhere in the vault to open its deep dive and track your progress."
               : `You've explored ${done} of ${total} quotes across all eras and themes.`}
@@ -43,7 +43,7 @@ export default function ProgressPage({ explored, onDeepDive }: Props) {
           {done === 0 && (
             <Link
               to="/"
-              className="inline-block mt-2 px-4 py-2 rounded-xl bg-slate-700 text-slate-200 hover:bg-slate-600 transition-colors text-sm font-medium"
+              className="inline-block mt-2 px-4 py-2 rounded-xl bg-[#d6cfc1] text-[#1a1a1a] hover:bg-stone-600 transition-colors text-sm font-medium"
             >
               Start Exploring →
             </Link>
@@ -63,18 +63,18 @@ export default function ProgressPage({ explored, onDeepDive }: Props) {
               <div
                 key={era.id}
                 className="rounded-xl p-4"
-                style={{ background: "#1e293b", border: `1px solid ${era.color}33` }}
+                style={{ background: "#ebe6dc", border: `1px solid ${era.color}33` }}
               >
                 <div className="flex items-center justify-between mb-2">
                   <div className="flex items-center gap-2">
                     <span className="text-lg">{era.icon}</span>
-                    <span className="font-semibold text-slate-200 text-sm">{era.name}</span>
+                    <span className="font-semibold text-[#1a1a1a] text-sm">{era.name}</span>
                   </div>
                   <span className="text-xs font-bold" style={{ color: era.color }}>
                     {eraDone}/{eraQuotes.length}
                   </span>
                 </div>
-                <div className="h-1.5 rounded-full bg-slate-700 overflow-hidden">
+                <div className="h-1.5 rounded-full bg-[#d6cfc1] overflow-hidden">
                   <div
                     className="h-full rounded-full transition-all duration-700"
                     style={{ width: `${eraPct}%`, background: era.color }}
@@ -98,18 +98,18 @@ export default function ProgressPage({ explored, onDeepDive }: Props) {
               <div
                 key={theme.id}
                 className="rounded-xl p-4"
-                style={{ background: "#1e293b", border: `1px solid ${theme.color}33` }}
+                style={{ background: "#ebe6dc", border: `1px solid ${theme.color}33` }}
               >
                 <div className="flex items-center justify-between mb-2">
                   <div className="flex items-center gap-2">
                     <span className="text-lg">{theme.icon}</span>
-                    <span className="font-semibold text-slate-200 text-sm">{theme.name}</span>
+                    <span className="font-semibold text-[#1a1a1a] text-sm">{theme.name}</span>
                   </div>
                   <span className="text-xs font-bold" style={{ color: theme.color }}>
                     {themeDone}/{themeQuotes.length}
                   </span>
                 </div>
-                <div className="h-1.5 rounded-full bg-slate-700 overflow-hidden">
+                <div className="h-1.5 rounded-full bg-[#d6cfc1] overflow-hidden">
                   <div
                     className="h-full rounded-full transition-all duration-700"
                     style={{ width: `${themePct}%`, background: theme.color }}
@@ -125,9 +125,9 @@ export default function ProgressPage({ explored, onDeepDive }: Props) {
       <section className="space-y-4">
         <div className="flex items-center justify-between">
           <h2 className="text-lg font-bold text-white">All Quotes</h2>
-          <div className="flex gap-3 text-xs text-slate-500">
+          <div className="flex gap-3 text-xs text-[#6b6358]">
             <span className="flex items-center gap-1"><span className="w-3 h-3 rounded-full bg-emerald-500 inline-block" /> Explored</span>
-            <span className="flex items-center gap-1"><span className="w-3 h-3 rounded-full bg-slate-700 inline-block" /> Not yet</span>
+            <span className="flex items-center gap-1"><span className="w-3 h-3 rounded-full bg-[#d6cfc1] inline-block" /> Not yet</span>
           </div>
         </div>
 
@@ -137,8 +137,8 @@ export default function ProgressPage({ explored, onDeepDive }: Props) {
             <div key={era.id} className="space-y-2">
               <div className="flex items-center gap-2">
                 <span>{era.icon}</span>
-                <h3 className="text-sm font-bold text-slate-400 uppercase tracking-wider">{era.name}</h3>
-                <div className="flex-1 h-px bg-slate-800" />
+                <h3 className="text-sm font-bold text-[#6b6358] uppercase tracking-wider">{era.name}</h3>
+                <div className="flex-1 h-px bg-[#ebe6dc]" />
               </div>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-2">
                 {eraQuotes.map((q) => {
@@ -149,7 +149,7 @@ export default function ProgressPage({ explored, onDeepDive }: Props) {
                       onClick={() => onDeepDive(q)}
                       className="flex items-start gap-3 text-left rounded-xl p-3 transition-all group"
                       style={{
-                        background: isDone ? `${era.color}12` : "#1e293b",
+                        background: isDone ? `${era.color}12` : "#ebe6dc",
                         border: `1px solid ${isDone ? era.color + "44" : "#334155"}`,
                       }}
                     >
@@ -174,7 +174,7 @@ export default function ProgressPage({ explored, onDeepDive }: Props) {
                           — {q.author}
                         </p>
                       </div>
-                      <span className="text-xs text-slate-600 group-hover:text-slate-400 flex-shrink-0 mt-0.5 transition-colors">
+                      <span className="text-xs text-[#6b6358] group-hover:text-[#6b6358] flex-shrink-0 mt-0.5 transition-colors">
                         {isDone ? "re-explore" : "explore →"}
                       </span>
                     </button>
@@ -198,7 +198,7 @@ function ProgressRing({ pct, done, total }: { pct: number; done: number; total: 
     <div className="relative flex-shrink-0 w-36 h-36">
       <svg width="144" height="144" className="-rotate-90">
         {/* Track */}
-        <circle cx="72" cy="72" r={r} fill="none" stroke="#1e293b" strokeWidth="10" />
+        <circle cx="72" cy="72" r={r} fill="none" stroke="#ebe6dc" strokeWidth="10" />
         {/* Progress */}
         <circle
           cx="72"
@@ -222,7 +222,7 @@ function ProgressRing({ pct, done, total }: { pct: number; done: number; total: 
       {/* Centre text */}
       <div className="absolute inset-0 flex flex-col items-center justify-center">
         <span className="text-2xl font-bold text-white">{pct}%</span>
-        <span className="text-xs text-slate-500">{done}/{total}</span>
+        <span className="text-xs text-[#6b6358]">{done}/{total}</span>
       </div>
     </div>
   );

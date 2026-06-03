@@ -127,8 +127,8 @@ export default function MountainBackground() {
 
         {/* Bottom fade to site background color */}
         <linearGradient id="fadeOut" x1="0" y1="0" x2="0" y2="1">
-          <stop offset="0%"   stopColor="#0f172a" stopOpacity="0" />
-          <stop offset="100%" stopColor="#0f172a" stopOpacity="1" />
+          <stop offset="0%"   stopColor="#f4f1ea" stopOpacity="0" />
+          <stop offset="100%" stopColor="#f4f1ea" stopOpacity="1" />
         </linearGradient>
 
         {/* Vignette */}

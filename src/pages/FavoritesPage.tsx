@@ -17,7 +17,7 @@ export default function FavoritesPage({ favorites, isFavorite, onToggleFavorite,
     <div className="px-4 py-8 max-w-6xl mx-auto space-y-8">
       <div>
         <h1 className="text-3xl font-bold text-white">Your Favorites</h1>
-        <p className="text-slate-400 mt-2">
+        <p className="text-[#6b6358] mt-2">
           {favQuotes.length === 0
             ? "No saved quotes yet — heart any quote to save it here."
             : `${favQuotes.length} quote${favQuotes.length !== 1 ? "s" : ""} you've saved.`}
@@ -27,12 +27,12 @@ export default function FavoritesPage({ favorites, isFavorite, onToggleFavorite,
       {favQuotes.length === 0 ? (
         <div className="text-center py-20 space-y-4">
           <span className="text-6xl">♡</span>
-          <p className="text-slate-500">
+          <p className="text-[#6b6358]">
             As you explore, click ♡ on any quote to save it here.
           </p>
           <Link
             to="/"
-            className="inline-block mt-2 px-5 py-2.5 rounded-xl bg-slate-700 text-slate-200 hover:bg-slate-600 transition-colors text-sm font-medium"
+            className="inline-block mt-2 px-5 py-2.5 rounded-xl bg-[#d6cfc1] text-[#1a1a1a] hover:bg-stone-600 transition-colors text-sm font-medium"
           >
             Explore Quotes →
           </Link>

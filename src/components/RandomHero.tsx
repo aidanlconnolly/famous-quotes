@@ -14,7 +14,7 @@ export default function RandomHero({ onDeepDive }: Props) {
     <div
       className="rounded-2xl p-6 cursor-default group no-select relative overflow-hidden"
       style={{
-        background: `linear-gradient(135deg, ${era?.color ?? "#334155"}22 0%, #1e293b 60%)`,
+        background: `linear-gradient(135deg, ${era?.color ?? "#334155"}22 0%, #ebe6dc 60%)`,
         border: `1px solid ${era?.color ?? "#334155"}44`,
       }}
       onDoubleClick={() => onDeepDive(quote)}
@@ -32,27 +32,27 @@ export default function RandomHero({ onDeepDive }: Props) {
               className="w-2 h-2 rounded-full"
               style={{ background: era?.color, boxShadow: `0 0 6px ${era?.color}` }}
             />
-            <span className="text-xs font-bold uppercase tracking-widest text-slate-400">
+            <span className="text-xs font-bold uppercase tracking-widest text-[#6b6358]">
               Random Quote
             </span>
           </div>
           <button
             onClick={(e) => { e.stopPropagation(); shuffle(); }}
-            className="text-xs font-medium text-slate-500 hover:text-slate-300 transition-colors px-2 py-1 rounded-lg hover:bg-slate-700"
+            className="text-xs font-medium text-[#6b6358] hover:text-[#2d2820] transition-colors px-2 py-1 rounded-lg hover:bg-[#d6cfc1]"
           >
             ↻ Another
           </button>
         </div>
 
-        <blockquote className="quote-serif text-base text-slate-100 italic leading-relaxed mb-4 line-clamp-4">
+        <blockquote className="quote-serif text-base text-[#1a1a1a] italic leading-relaxed mb-4 line-clamp-4">
           "{quote.text}"
         </blockquote>
 
         <div className="flex items-center justify-between">
           <div>
-            <p className="font-semibold text-slate-300 text-sm">{quote.author}</p>
+            <p className="font-semibold text-[#2d2820] text-sm">{quote.author}</p>
             {quote.authorTitle && (
-              <p className="text-slate-500 text-xs">{quote.authorTitle}</p>
+              <p className="text-[#6b6358] text-xs">{quote.authorTitle}</p>
             )}
           </div>
           <button
@@ -64,7 +64,7 @@ export default function RandomHero({ onDeepDive }: Props) {
           </button>
         </div>
 
-        <p className="mt-3 text-slate-700 text-xs opacity-0 group-hover:opacity-100 transition-opacity">
+        <p className="mt-3 text-[#2d2820] text-xs opacity-0 group-hover:opacity-100 transition-opacity">
           Double-click to explore ↗
         </p>
       </div>

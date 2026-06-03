@@ -10,7 +10,7 @@ export default function AuthorGallery() {
     <div className="max-w-5xl mx-auto space-y-6">
       <div>
         <h2 className="text-2xl font-bold text-white">All Thinkers</h2>
-        <p className="text-slate-400 mt-1">
+        <p className="text-[#6b6358] mt-1">
           {authors.length} minds across history. Click a thinker to see all their quotes and dive deep.
         </p>
       </div>
@@ -27,7 +27,7 @@ export default function AuthorGallery() {
               onClick={() => navigate(`/author/${slug}`)}
               className="rounded-2xl p-4 text-left transition-all duration-200 hover:scale-105 active:scale-95 group"
               style={{
-                background: "#1e293b",
+                background: "#ebe6dc",
                 border: `1px solid ${era?.color ?? "#334155"}44`,
               }}
             >
@@ -40,15 +40,15 @@ export default function AuthorGallery() {
               >
                 {sample?.emoji ?? name[0]}
               </div>
-              <p className="font-semibold text-slate-200 text-sm leading-tight group-hover:text-white transition-colors">
+              <p className="font-semibold text-[#1a1a1a] text-sm leading-tight group-hover:text-white transition-colors">
                 {name}
               </p>
               {sample?.authorTitle && (
-                <p className="text-slate-500 text-xs mt-0.5 line-clamp-2">{sample.authorTitle}</p>
+                <p className="text-[#6b6358] text-xs mt-0.5 line-clamp-2">{sample.authorTitle}</p>
               )}
               <div className="flex items-center justify-between mt-2">
                 {sample?.authorLived && (
-                  <span className="text-slate-600 text-xs">{sample.authorLived}</span>
+                  <span className="text-[#6b6358] text-xs">{sample.authorLived}</span>
                 )}
                 <span
                   className="text-xs px-2 py-0.5 rounded-full font-medium ml-auto"

@@ -3,8 +3,13 @@
 @tailwind utilities;
 
 :root {
-  --bg: #0f172a;
-  --surface: #1e293b;
+  --bg: #f4f1ea;
+  --surface: #ebe6dc;
+  --ink: #1a1a1a;
+  --muted: #6b6358;
+  --rule: #d6cfc1;
+  --accent: #b8472a;
+  --accent-soft: #d4a574;
 }
 
 html,
@@ -15,10 +20,8 @@ body,
 
 body {
   margin: 0;
-  /* Mountain background handled by fixed MountainBackground component on home page.
-     Other pages get the dark slate directly. */
   background: var(--bg);
-  color: #e2e8f0;
+  color: var(--ink);
   font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
   -webkit-font-smoothing: antialiased;
 }
@@ -34,7 +37,7 @@ body {
   height: 10px;
 }
 *::-webkit-scrollbar-thumb {
-  background: #475569;
+  background: #c4b8a8;
   border-radius: 5px;
 }
 *::-webkit-scrollbar-track {

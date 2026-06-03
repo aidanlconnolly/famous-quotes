@@ -46,10 +46,10 @@ export default function BrowseCards({ exploredCount }: { exploredCount: number }
         extra={
           <div className="mt-3">
             <div className="flex items-center justify-between mb-1">
-              <span className="text-xs text-slate-500">Explored</span>
-              <span className="text-xs font-bold text-slate-300">{exploredCount}/{totalQuotes} · {pct}%</span>
+              <span className="text-xs text-[#6b6358]">Explored</span>
+              <span className="text-xs font-bold text-[#2d2820]">{exploredCount}/{totalQuotes} · {pct}%</span>
             </div>
-            <div className="h-1.5 rounded-full bg-slate-700/60 overflow-hidden">
+            <div className="h-1.5 rounded-full bg-[#d6cfc1] overflow-hidden">
               <div
                 className="h-full rounded-full transition-all duration-700"
                 style={{ width: `${pct}%`, background: "linear-gradient(90deg, #059669, #34d399)" }}
@@ -86,10 +86,8 @@ function BrowseCard({
       to={to}
       className="relative block rounded-2xl p-5 overflow-hidden transition-all duration-300 hover:scale-[1.02] group"
       style={{
-        background: "rgba(15, 23, 42, 0.6)",
-        border: `1px solid ${accent}30`,
-        backdropFilter: "blur(12px)",
-        WebkitBackdropFilter: "blur(12px)",
+        background: "#ebe6dc",
+        border: `1px solid ${accent}40`,
       }}
     >
       {/* Faded corner glow (the "personal rankings" fade effect) */}
@@ -113,14 +111,14 @@ function BrowseCard({
               {icon}
             </div>
             <div>
-              <h3 className="font-bold text-white text-base">{title}</h3>
+              <h3 className="font-bold text-[#1a1a1a] text-base">{title}</h3>
               <p className="text-xs" style={{ color: accent }}>{stats}</p>
             </div>
           </div>
-          <span className="text-slate-500 group-hover:text-slate-300 transition-colors text-lg">→</span>
+          <span className="text-[#b8472a] group-hover:text-[#8a3520] transition-colors text-lg">→</span>
         </div>
 
-        <p className="text-slate-400 text-sm leading-relaxed mb-3">{description}</p>
+        <p className="text-[#6b6358] text-sm leading-relaxed mb-3">{description}</p>
 
         <div className="flex flex-wrap gap-1.5">
           {chips.slice(0, 4).map((c) => (
@@ -133,7 +131,7 @@ function BrowseCard({
             </span>
           ))}
           {chips.length > 4 && (
-            <span className="text-xs px-2 py-0.5 rounded-full bg-slate-800 text-slate-500">
+            <span className="text-xs px-2 py-0.5 rounded-full bg-[#d6cfc1] text-[#6b6358]">
               +{chips.length - 4} more
             </span>
           )}

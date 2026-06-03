@@ -67,13 +67,13 @@ export default function DeepDiveModal({
     >
       <div
         className="relative w-full max-w-2xl max-h-[90vh] overflow-y-auto rounded-2xl animate-pop"
-        style={{ background: "#0f172a", border: `1.5px solid ${era?.color ?? "#475569"}` }}
+        style={{ background: "#f4f1ea", border: `1.5px solid ${era?.color ?? "#475569"}` }}
       >
         {/* ── Header bar ── */}
         <div
           className="sticky top-0 z-10 flex items-center justify-between px-6 py-4 rounded-t-2xl"
           style={{
-            background: `linear-gradient(135deg, ${era?.color ?? "#334155"}22, #0f172a88)`,
+            background: `linear-gradient(135deg, ${era?.color ?? "#334155"}22, #f4f1ea88)`,
             borderBottom: `1px solid ${era?.color ?? "#475569"}44`,
             backdropFilter: "blur(8px)",
           }}
@@ -89,7 +89,7 @@ export default function DeepDiveModal({
           </div>
           <button
             onClick={onClose}
-            className="w-8 h-8 flex items-center justify-center rounded-full text-slate-400 hover:text-white hover:bg-slate-700 transition-colors"
+            className="w-8 h-8 flex items-center justify-center rounded-full text-[#6b6358] hover:text-white hover:bg-[#d6cfc1] transition-colors"
             aria-label="Close"
           >
             ✕
@@ -106,16 +106,16 @@ export default function DeepDiveModal({
               "{quote.text}"
             </blockquote>
             <footer className="mt-3 flex flex-wrap items-center gap-x-3 gap-y-1">
-              <span className="font-bold text-slate-200">{quote.author}</span>
+              <span className="font-bold text-[#1a1a1a]">{quote.author}</span>
               {quote.authorTitle && (
-                <span className="text-slate-400 text-sm">· {quote.authorTitle}</span>
+                <span className="text-[#6b6358] text-sm">· {quote.authorTitle}</span>
               )}
               {quote.authorLived && (
-                <span className="text-slate-500 text-sm">({quote.authorLived})</span>
+                <span className="text-[#6b6358] text-sm">({quote.authorLived})</span>
               )}
             </footer>
             {(quote.source || quote.year) && (
-              <p className="mt-1.5 text-slate-500 text-xs italic">
+              <p className="mt-1.5 text-[#6b6358] text-xs italic">
                 {[quote.source, quote.year].filter(Boolean).join(" · ")}
               </p>
             )}
@@ -124,10 +124,10 @@ export default function DeepDiveModal({
           {/* ── Context ── */}
           {quote.deepDive.context && (
             <section className="space-y-2">
-              <h3 className="text-xs font-bold uppercase tracking-widest text-slate-500">
+              <h3 className="text-xs font-bold uppercase tracking-widest text-[#6b6358]">
                 Background & Context
               </h3>
-              <p className="text-slate-300 leading-relaxed text-sm">{quote.deepDive.context}</p>
+              <p className="text-[#2d2820] leading-relaxed text-sm">{quote.deepDive.context}</p>
             </section>
           )}
 
@@ -139,13 +139,13 @@ export default function DeepDiveModal({
             >
               What It Means
             </h3>
-            <p className="text-slate-200 leading-relaxed">{quote.deepDive.meaning}</p>
+            <p className="text-[#1a1a1a] leading-relaxed">{quote.deepDive.meaning}</p>
           </section>
 
           {/* ── Significance ── */}
           <section
             className="rounded-xl p-5 space-y-2"
-            style={{ background: "#1e293b", border: `1px solid ${era?.color ?? "#334155"}44` }}
+            style={{ background: "#ebe6dc", border: `1px solid ${era?.color ?? "#334155"}44` }}
           >
             <h3
               className="text-xs font-bold uppercase tracking-widest"
@@ -153,7 +153,7 @@ export default function DeepDiveModal({
             >
               ✦ What It Means For You
             </h3>
-            <p className="text-slate-200 leading-relaxed">{quote.deepDive.significance}</p>
+            <p className="text-[#1a1a1a] leading-relaxed">{quote.deepDive.significance}</p>
           </section>
 
           {/* ── Themes ── */}
@@ -179,20 +179,20 @@ export default function DeepDiveModal({
               style={
                 isFavorite
                   ? { background: "#be185d22", color: "#f472b6", border: "1px solid #be185d44" }
-                  : { background: "#1e293b", color: "#94a3b8", border: "1px solid #334155" }
+                  : { background: "#ebe6dc", color: "#94a3b8", border: "1px solid #334155" }
               }
             >
               {isFavorite ? "♥ Saved" : "♡ Save"}
             </button>
             <button
               onClick={handleCopy}
-              className="flex items-center gap-2 px-4 py-2 rounded-lg text-sm font-medium bg-slate-800 text-slate-300 border border-slate-700 hover:text-white transition-colors"
+              className="flex items-center gap-2 px-4 py-2 rounded-lg text-sm font-medium bg-[#ebe6dc] text-[#2d2820] border border-[#d6cfc1] hover:text-white transition-colors"
             >
               ⧉ Copy Quote
             </button>
             <button
               onClick={handleShare}
-              className="flex items-center gap-2 px-4 py-2 rounded-lg text-sm font-medium bg-slate-800 text-slate-300 border border-slate-700 hover:text-white transition-colors"
+              className="flex items-center gap-2 px-4 py-2 rounded-lg text-sm font-medium bg-[#ebe6dc] text-[#2d2820] border border-[#d6cfc1] hover:text-white transition-colors"
             >
               🔗 Copy Link
             </button>
@@ -201,7 +201,7 @@ export default function DeepDiveModal({
           {/* ── Related quotes ── */}
           {related.length > 0 && (
             <section className="space-y-3">
-              <h3 className="text-xs font-bold uppercase tracking-widest text-slate-500">
+              <h3 className="text-xs font-bold uppercase tracking-widest text-[#6b6358]">
                 Related Quotes
               </h3>
               <div className="space-y-2">
@@ -209,12 +209,12 @@ export default function DeepDiveModal({
                   <button
                     key={r.id}
                     onClick={() => onOpen(r)}
-                    className="w-full text-left rounded-lg px-4 py-3 bg-slate-800/60 border border-slate-700/50 hover:border-slate-500 transition-colors group"
+                    className="w-full text-left rounded-lg px-4 py-3 bg-[#ebe6dc]/60 border border-[#d6cfc1]/50 hover:border-stone-500 transition-colors group"
                   >
-                    <p className="quote-serif text-sm text-slate-300 italic group-hover:text-white transition-colors line-clamp-2">
+                    <p className="quote-serif text-sm text-[#2d2820] italic group-hover:text-white transition-colors line-clamp-2">
                       "{r.text}"
                     </p>
-                    <p className="mt-1 text-xs text-slate-500 group-hover:text-slate-400">
+                    <p className="mt-1 text-xs text-[#6b6358] group-hover:text-[#6b6358]">
                       — {r.author}
                     </p>
                   </button>

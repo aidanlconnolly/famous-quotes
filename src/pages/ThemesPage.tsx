@@ -12,7 +12,7 @@ export default function ThemesPage({ isFavorite, onToggleFavorite, onDeepDive }:
     <div className="space-y-8">
       <div>
         <h1 className="text-3xl font-bold text-white">Browse by Theme</h1>
-        <p className="text-slate-400 mt-2 max-w-2xl">
+        <p className="text-[#6b6358] mt-2 max-w-2xl">
           Find exactly what you need — motivation before a big challenge, Stoic wisdom when you
           need perspective, or words about resilience when you've been knocked down.
         </p>

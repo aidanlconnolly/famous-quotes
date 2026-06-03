@@ -21,10 +21,10 @@ export default function AuthorPage({ isFavorite, onToggleFavorite, onDeepDive }:
   if (!authorName || quotes.length === 0) {
     return (
       <div className="text-center py-24">
-        <p className="text-slate-400 text-lg">Author not found.</p>
+        <p className="text-[#6b6358] text-lg">Author not found.</p>
         <button
           onClick={() => navigate("/authors")}
-          className="mt-4 text-slate-500 hover:text-white underline text-sm"
+          className="mt-4 text-[#6b6358] hover:text-white underline text-sm"
         >
           ← Back to authors
         </button>
@@ -37,7 +37,7 @@ export default function AuthorPage({ isFavorite, onToggleFavorite, onDeepDive }:
       {/* Back */}
       <button
         onClick={() => navigate("/authors")}
-        className="text-slate-500 hover:text-slate-300 text-sm flex items-center gap-1 transition-colors"
+        className="text-[#6b6358] hover:text-[#2d2820] text-sm flex items-center gap-1 transition-colors"
       >
         ← All Authors
       </button>
@@ -46,7 +46,7 @@ export default function AuthorPage({ isFavorite, onToggleFavorite, onDeepDive }:
       <div
         className="rounded-3xl p-8 md:p-10"
         style={{
-          background: `linear-gradient(135deg, ${era?.color ?? "#334155"}22 0%, #1e293b 60%)`,
+          background: `linear-gradient(135deg, ${era?.color ?? "#334155"}22 0%, #ebe6dc 60%)`,
           border: `1px solid ${era?.color ?? "#334155"}44`,
         }}
       >
@@ -61,10 +61,10 @@ export default function AuthorPage({ isFavorite, onToggleFavorite, onDeepDive }:
           <div className="flex-1">
             <h1 className="text-3xl font-bold text-white">{authorName}</h1>
             {sample.authorTitle && (
-              <p className="text-slate-300 mt-1">{sample.authorTitle}</p>
+              <p className="text-[#2d2820] mt-1">{sample.authorTitle}</p>
             )}
             {sample.authorLived && (
-              <p className="text-slate-500 text-sm mt-1">{sample.authorLived}</p>
+              <p className="text-[#6b6358] text-sm mt-1">{sample.authorLived}</p>
             )}
             <div className="flex items-center gap-3 mt-3 flex-wrap">
               {era && (
@@ -75,7 +75,7 @@ export default function AuthorPage({ isFavorite, onToggleFavorite, onDeepDive }:
                   {era.icon} {era.name}
                 </span>
               )}
-              <span className="text-xs text-slate-500">
+              <span className="text-xs text-[#6b6358]">
                 {quotes.length} quote{quotes.length !== 1 ? "s" : ""} in the vault
               </span>
             </div>

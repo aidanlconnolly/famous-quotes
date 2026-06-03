@@ -59,7 +59,7 @@ export default function EraRoadmap({ isFavorite, onToggleFavorite, onDeepDive }:
                 className="text-left w-full group pt-1"
               >
                 <div className="flex items-baseline gap-3 flex-wrap">
-                  <h2 className="text-xl font-bold text-white group-hover:text-slate-100 transition-colors">
+                  <h2 className="text-xl font-bold text-white group-hover:text-[#1a1a1a] transition-colors">
                     {era.name}
                   </h2>
                   <span
@@ -68,11 +68,11 @@ export default function EraRoadmap({ isFavorite, onToggleFavorite, onDeepDive }:
                   >
                     {era.range}
                   </span>
-                  <span className="text-slate-500 text-xs ml-auto">
+                  <span className="text-[#6b6358] text-xs ml-auto">
                     {quotes.length} quote{quotes.length !== 1 ? "s" : ""}
                   </span>
                 </div>
-                <p className="text-slate-400 text-sm mt-1 leading-relaxed line-clamp-2">
+                <p className="text-[#6b6358] text-sm mt-1 leading-relaxed line-clamp-2">
                   {era.blurb}
                 </p>
               </button>

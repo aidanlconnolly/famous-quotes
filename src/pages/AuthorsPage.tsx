@@ -5,7 +5,7 @@ export default function AuthorsPage() {
     <div className="space-y-8">
       <div>
         <h1 className="text-3xl font-bold text-white">Browse by Author</h1>
-        <p className="text-slate-400 mt-2 max-w-2xl">
+        <p className="text-[#6b6358] mt-2 max-w-2xl">
           Explore the complete wisdom of each thinker. Click any name to see all their quotes and
           a short biography.
         </p>

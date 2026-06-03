@@ -66,7 +66,7 @@ export default function ThemeGrid({ isFavorite, onToggleFavorite, onDeepDive }: 
           <span className="text-3xl">{theme.icon}</span>
           <h2 className="text-2xl font-bold text-white">{theme.name}</h2>
         </div>
-        <p className="text-slate-300 leading-relaxed">{theme.blurb}</p>
+        <p className="text-[#2d2820] leading-relaxed">{theme.blurb}</p>
       </div>
 
       {/* Quotes grid */}
